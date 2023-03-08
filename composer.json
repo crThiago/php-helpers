@@ -1,0 +1,28 @@
+{
+    "name": "crthiago/php-helpers",
+    "description": "Useful functions",
+    "type": "helper",
+    "require-dev": {
+        "phpunit/phpunit": "^9.6",
+        "nunomaduro/phpinsights": "^2.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "Crthiago\\PhpHelpers\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "Thiago Rodrigues Costa"
+        }
+    ],
+    "require": {},
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    }
+}
