@@ -1,6 +1,7 @@
 <?php
 
 use Crthiago\PhpHelpers\Classes\Format;
+use Crthiago\PhpHelpers\Classes\Sanitize;
 use Crthiago\PhpHelpers\Classes\Validate;
 
 if (!function_exists('validate_cpf')) {
@@ -54,5 +55,17 @@ if (!function_exists('date_db')) {
 if (!function_exists('datetime_db')) {
     function datetime_db(string $date, string|null $format = null): string {
         return Format::datetimeDb($date, $format);
+    }
+}
+
+if (!function_exists('remove_accents')) {
+    function remove_accents(string $string): string {
+        return Sanitize::removeAccents($string);
+    }
+}
+
+if (!function_exists('remove_special_characters')) {
+    function remove_special_characters(string $string): string {
+        return Sanitize::removeSpecialCharacters($string);
     }
 }
