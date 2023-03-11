@@ -1,6 +1,7 @@
 <?php
 
 use Crthiago\PhpHelpers\Classes\Format;
+use Crthiago\PhpHelpers\Classes\Mask;
 use Crthiago\PhpHelpers\Classes\Sanitize;
 use Crthiago\PhpHelpers\Classes\Validate;
 
@@ -67,5 +68,35 @@ if (!function_exists('remove_accents')) {
 if (!function_exists('remove_special_characters')) {
     function remove_special_characters(string $string): string {
         return Sanitize::removeSpecialCharacters($string);
+    }
+}
+
+if (!function_exists('mask_cpf')) {
+    function mask_cpf(string|int $cpf): string {
+        return Mask::cpf($cpf);
+    }
+}
+
+if (!function_exists('mask_cnpj')) {
+    function mask_cnpj(string|int $cnpj): string {
+        return Mask::cnpj($cnpj);
+    }
+}
+
+if (!function_exists('mask_phone')) {
+    function mask_phone(string|int $phone): string {
+        return Mask::phone($phone);
+    }
+}
+
+if (!function_exists('mask_cep')) {
+    function mask_cep(string|int $cep): string {
+        return Mask::cep($cep);
+    }
+}
+
+if (!function_exists('mask_custom')) {
+    function mask_custom(string $value, string $mask, int|bool $padType = STR_PAD_LEFT): string {
+        return Mask::custom($value, $mask, $padType);
     }
 }
